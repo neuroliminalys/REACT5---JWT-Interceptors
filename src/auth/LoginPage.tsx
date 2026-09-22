@@ -1,6 +1,6 @@
 import { type FormEvent, useState } from "react";
 import { useNavigate } from "react-router";
-import { login } from "../services/auth.service";
+import { login } from "./auth.service";
 
 export function LoginPage() {
   const navigate = useNavigate();
@@ -9,12 +9,12 @@ export function LoginPage() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    
+
     login(username, password).then((resp) => {
       if (resp.status === 200) {
         navigate("/todos");
       } else {
-        console.log("Login error");
+        console.error("Login error");
       }
     });
   }

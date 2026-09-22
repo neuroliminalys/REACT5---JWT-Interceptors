@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 
 import type { TodoItem } from './todo-item';
 import { createTodo, getTodos } from './todo.service';
-import { apiLogout } from '../services/auth.service';
+import { apiLogout } from '../auth/auth.service';
 
 export function TodosPage() {
   const navigate = useNavigate();
